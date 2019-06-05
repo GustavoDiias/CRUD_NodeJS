@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+  <form action="<%= action %>" method="POST">
+    <div class="form-group">
+    <label>Nome:</label>
+    <input type="text" name="nome" value="<%= alunos.nome %>" />
+    </div>
+    <div class="form-group">
+    <label>Matricula:</label>
+    <input type="text" name="matricula" value="<%= alunos.matricula %>" />
+    </div>
+    <div class="form-group">
+    <label>Sexo:</label>
+    <input type="text" name="sexo" value="<%= alunos.sexo %>" />
+    </div>
+    <div class="form-group">
+    <label>Idade:</label>
+    <input type="text" name="idade" value="<%= alunos.idade %>" />
+    </div>
+    <input type="submit"></input>
+  </form>
+</html>

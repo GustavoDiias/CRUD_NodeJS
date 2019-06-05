@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+  <div class="container"> 
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Matricula</th>
+        <th>Sexo</th>
+        <th>Idade</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% documentos.forEach(function(dados){ %>
+      <tr>
+        <td><%= dados.nome %></td>
+        <td><%= dados.matricula %></td>
+        <td><%= dados.sexo %></td>
+        <td><%= dados.idade %></td>
+        <td><button type="button" class="btn btn-warning" onclick="window.location.href = '/edit/<%= dados._id %>';">Editar</button></td>
+        <td><button type="button" class="btn btn-danger" onclick="window.location.href = '/delete/<%= dados._id %>';return confirm('Tem certeza que deseja excluir?');">Excluir</button></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success"><a onclick="window.location.href = '/newAlun';">Cadastrar Novo Aluno</a></button>
+  </div>
+</html>
